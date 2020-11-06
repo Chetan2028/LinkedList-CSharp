@@ -12,15 +12,8 @@ namespace LinkedListApplication
             linkedList.InsertNodeAtEnd(30);
             linkedList.InsertNodeAtEnd(70);
             linkedList.Display();
-            int searchResult = linkedList.Search(70);
-            if (searchResult != -1)
-            {
-                Console.WriteLine("Element is present at index : {0}" , searchResult);
-            }
-            else
-            {
-                Console.WriteLine("Element not found");
-            }
+            linkedList.InsertAfter(30, 40);
+            linkedList.Display();
             
         }
     }
