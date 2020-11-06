@@ -31,24 +31,19 @@ namespace LinkedListApplication
         }
 
         /// <summary>
-        /// Inorder to insert the node at a given position ,we need to traverse till position-1 node
-        /// Inserts the node at given position.
+        /// Pops this instance.
         /// </summary>
-        /// <param name="position">The position.</param>
-        /// <param name="newData">The new data.</param>
-        public void InsertNodeAtGivenPosition(int position, int newData)
+        public void Pop()
         {
-            Node newNode = new Node(newData);
-            int count = 1;
-            Node previous = head;
-            while (count < position - 1)
+            if (head == null)
             {
-                previous = previous.next;
-                count++;
+                Console.WriteLine("No elements to pop");
+                return;
             }
-            Node current = previous.next;
-            newNode.next = current;
-            previous.next = newNode;
+            Node temp = head;
+            Console.WriteLine("{0} element is popped", temp.data);
+            head = head.next;
+            temp.next = null;
         }
         /// <summary>
         /// Displays this instance.
