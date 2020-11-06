@@ -15,6 +15,13 @@ namespace LinkedListApplication
         public void InsertNodeAtBeginning(int newData)
         {
             Node newNode = new Node(newData);
+
+            if (head == null)
+            {
+                head = new Node(newData);
+                return;
+            }
+            
             newNode.next = head;
             head = newNode;
         }
