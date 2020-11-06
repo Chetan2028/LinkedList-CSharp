@@ -6,7 +6,7 @@ namespace LinkedListApplication
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Linked List Application");
+            Console.WriteLine("Welcome to Linked List");
             LinkedList linkedList = new LinkedList();
             linkedList.Add(56);
             linkedList.Add(30);
