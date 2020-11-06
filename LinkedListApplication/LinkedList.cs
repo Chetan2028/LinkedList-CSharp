@@ -9,10 +9,10 @@ namespace LinkedListApplication
         public Node head;
 
         /// <summary>
-        /// Inserts the node at beginning.
+        /// Inserts the node at end.
         /// </summary>
         /// <param name="newData">The new data.</param>
-        public void InsertNodeAtBeginning(int newData)
+        public void InsertNodeAtEnd(int newData)
         {
             Node newNode = new Node(newData);
 
@@ -21,9 +21,13 @@ namespace LinkedListApplication
                 head = new Node(newData);
                 return;
             }
-            
-            newNode.next = head;
-            head = newNode;
+            Node temp = head;
+            while (temp.next != null)
+            {
+                temp = temp.next;
+            }
+            newNode.next = null;
+            temp.next = newNode;
         }
 
         /// <summary>
