@@ -12,9 +12,10 @@ namespace LinkedListApplication
             linkedList.InsertNodeAtEnd(30);
             linkedList.InsertNodeAtEnd(70);
             linkedList.Display();
-            linkedList.InsertAfter(30, 40);
+            linkedList.SizeOfLinkedList();
+            linkedList.DeleteAGivenNode(300);
+            linkedList.SizeOfLinkedList();
             linkedList.Display();
-            
         }
     }
 }

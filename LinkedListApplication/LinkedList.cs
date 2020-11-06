@@ -52,28 +52,49 @@ namespace LinkedListApplication
         }
 
         /// <summary>
-        /// Inserts the after.
+        /// Deletes a given node.
         /// </summary>
         /// <param name="key">The key.</param>
-        /// <param name="newData">The new data.</param>
-        public void InsertAfter(int key, int newData)
+        public void DeleteAGivenNode(int key)
         {
-            int searchValue = Search(key);
-            if (searchValue == -1)
+            int searchResult = Search(key);
+            if (searchResult == -1)
             {
-                Console.WriteLine("No such element {0} found ", key);
+                Console.WriteLine("No element found to delete");
             }
             else
             {
-                Node newNode = new Node(newData);
-                Node previous = head;
-                for (int index = 1; index < searchValue; index++)
+                Node temp = head;
+                Node previous = null;
+
+                //If the head node needs to be deleted , then change the head
+                if (temp != null && temp.data == key)
                 {
-                    previous = previous.next;
+                    head = temp.next;
+                    return;
                 }
-                newNode.next = previous.next;
-                previous.next = newNode;
+                //traversing till the previous node of the node to be deleted.
+                while (temp.data != key)
+                {
+                    previous = temp;
+                    temp = temp.next;
+                }
+                previous.next = temp.next;
             }
+        }
+        /// <summary>
+        /// Sizes the of linked list.
+        /// </summary>
+        public void SizeOfLinkedList()
+        {
+            int count = 1;
+            Node temp = head;
+            while (temp.next != null)
+            {
+                count++;
+                temp = temp.next;
+            }
+            Console.WriteLine("No of elements in a linked list is : {0}", count);
         }
         /// <summary>
         /// Displays this instance.
