@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LinkedListApplication
 {
-    class LinkedList
+    public class LinkedList
     {
         public Node head;
 
@@ -31,19 +31,24 @@ namespace LinkedListApplication
         }
 
         /// <summary>
-        /// Traverse till the last -1 node and make next of that node to null
-        /// Pops the last.
+        /// Searches the specified search key.
         /// </summary>
-        public void PopLast()
+        /// <param name="searchKey">The search key.</param>
+        /// <returns></returns>
+        public int Search(int searchKey)
         {
-            Node last = head;
-            Node previousToLast = null;
-            while (last.next != null)
+            Node temp = head;
+            int count = 1;
+            while(temp != null)
             {
-                previousToLast = last;
-                last = last.next;
+                if (temp.data == searchKey)
+                {
+                    return count;
+                }
+                count++;
+                temp = temp.next;
             }
-            previousToLast.next = null;
+            return -1;
         }
         /// <summary>
         /// Displays this instance.

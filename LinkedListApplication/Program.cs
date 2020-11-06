@@ -2,7 +2,7 @@
 
 namespace LinkedListApplication
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -12,8 +12,16 @@ namespace LinkedListApplication
             linkedList.InsertNodeAtEnd(30);
             linkedList.InsertNodeAtEnd(70);
             linkedList.Display();
-            linkedList.PopLast();
-            linkedList.Display();
+            int searchResult = linkedList.Search(70);
+            if (searchResult != -1)
+            {
+                Console.WriteLine("Element is present at index : {0}" , searchResult);
+            }
+            else
+            {
+                Console.WriteLine("Element not found");
+            }
+            
         }
     }
 }
