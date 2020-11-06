@@ -9,28 +9,14 @@ namespace LinkedListApplication
         public Node head;
 
         /// <summary>
-        /// Adds the specified new data.
+        /// Inserts the node at beginning.
         /// </summary>
         /// <param name="newData">The new data.</param>
-        public void Add(int newData)
+        public void InsertNodeAtBeginning(int newData)
         {
             Node newNode = new Node(newData);
-
-            //If the linked list is empty , make the new node as head
-            if (head == null)
-            {
-                head = new Node(newData);
-                return;
-            }
-
-            newNode.next = null;
-
-            Node temp = head;
-            while (temp.next != null)
-            {
-                temp = temp.next;
-            }
-            temp.next = newNode;
+            newNode.next = head;
+            head = newNode;
         }
 
         /// <summary>
