@@ -31,19 +31,19 @@ namespace LinkedListApplication
         }
 
         /// <summary>
-        /// Pops this instance.
+        /// Traverse till the last -1 node and make next of that node to null
+        /// Pops the last.
         /// </summary>
-        public void Pop()
+        public void PopLast()
         {
-            if (head == null)
+            Node last = head;
+            Node previousToLast = null;
+            while (last.next != null)
             {
-                Console.WriteLine("No elements to pop");
-                return;
+                previousToLast = last;
+                last = last.next;
             }
-            Node temp = head;
-            Console.WriteLine("{0} element is popped", temp.data);
-            head = head.next;
-            temp.next = null;
+            previousToLast.next = null;
         }
         /// <summary>
         /// Displays this instance.

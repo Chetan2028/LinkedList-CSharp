@@ -12,7 +12,7 @@ namespace LinkedListApplication
             linkedList.InsertNodeAtEnd(30);
             linkedList.InsertNodeAtEnd(70);
             linkedList.Display();
-            linkedList.Pop();
+            linkedList.PopLast();
             linkedList.Display();
         }
     }
