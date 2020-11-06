@@ -32,6 +32,11 @@ namespace LinkedListApplication
         public void Display()
         {
             Node temp = head;
+            if (head == null)
+            {
+                Console.WriteLine("Linked List is empty");
+                return;
+            }
             while (temp != null)
             {
                 Console.Write(temp.data + "-->");
