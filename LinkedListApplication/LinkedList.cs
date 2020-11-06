@@ -31,6 +31,26 @@ namespace LinkedListApplication
         }
 
         /// <summary>
+        /// Inorder to insert the node at a given position ,we need to traverse till position-1 node
+        /// Inserts the node at given position.
+        /// </summary>
+        /// <param name="position">The position.</param>
+        /// <param name="newData">The new data.</param>
+        public void InsertNodeAtGivenPosition(int position, int newData)
+        {
+            Node newNode = new Node(newData);
+            int count = 1;
+            Node previous = head;
+            while (count < position - 1)
+            {
+                previous = previous.next;
+                count++;
+            }
+            Node current = previous.next;
+            newNode.next = current;
+            previous.next = newNode;
+        }
+        /// <summary>
         /// Displays this instance.
         /// </summary>
         public void Display()
