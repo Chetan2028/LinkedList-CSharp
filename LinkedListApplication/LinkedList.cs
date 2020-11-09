@@ -18,7 +18,7 @@ namespace LinkedListApplication
 
             if (head == null)
             {
-                head = new Node(newData);
+                head = newNode;
                 return;
             }
             Node temp = head;
