@@ -15,6 +15,9 @@ namespace LinkedListTesting
             linkedList = new LinkedListApplication.LinkedList();
         }
 
+        /// <summary>
+        /// Checks for size of linked list happy case.
+        /// </summary>
         [TestMethod]
         public void CheckForSizeOfLinkedList_HappyCase()
         {
@@ -26,6 +29,9 @@ namespace LinkedListTesting
             int expected = 4;
             Assert.AreEqual(expected, actual);
         }
+        /// <summary>
+        /// Checks for size of linked list sad case.
+        /// </summary>
         [TestMethod]
         public void CheckForSizeOfLinkedList_SadCase()
         {
