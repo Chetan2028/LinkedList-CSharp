@@ -66,7 +66,5 @@ namespace LinkedListTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
-
-
     }
 }
