@@ -113,6 +113,36 @@ namespace LinkedListApplication
                 temp = temp.next;
             }
             Console.WriteLine("null");
+        }        
+        public void SortLinkedList()
+        {
+            Node current = head;
+            Node index = null;
+            int temp;
+
+            if (head == null)
+            {
+                return;
+            }
+
+            while (current != null)
+            {
+                //Node index will point to node next to current
+                index = current.next;
+
+                while (index != null)
+                {
+                    //If current's data is greater than index's node data ,swap the data between them
+                    if (current.data > index.data)
+                    {
+                        temp = current.data;
+                        current.data = index.data;
+                        index.data = temp;
+                    }
+                    index = index.next;
+                }
+                current = current.next;
+            }
         }
     }
 }
