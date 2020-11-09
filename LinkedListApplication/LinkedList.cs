@@ -85,7 +85,7 @@ namespace LinkedListApplication
         /// <summary>
         /// Sizes the of linked list.
         /// </summary>
-        public void SizeOfLinkedList()
+        public int SizeOfLinkedList()
         {
             int count = 1;
             Node temp = head;
@@ -95,6 +95,7 @@ namespace LinkedListApplication
                 temp = temp.next;
             }
             Console.WriteLine("No of elements in a linked list is : {0}", count);
+            return count;
         }
         /// <summary>
         /// Displays this instance.
