@@ -114,6 +114,8 @@ namespace LinkedListApplication
             }
             Console.WriteLine("null");
         }        
+        
+        //Sort the linked list
         public void SortLinkedList()
         {
             Node current = head;
