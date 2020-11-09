@@ -19,7 +19,7 @@ namespace LinkedListTesting
         /// Givens the existing element to search should return index of that element.
         /// </summary>
         [TestMethod]
-        public void GivenExistingElementToSearch_ShouldReturnIndexOfThatElement()
+        public void GivenExistingElementToSearch_ShouldReturnIndexOfThatElement_HappyCase()
         {
             //Arrange
             int expected = 3;
@@ -32,8 +32,22 @@ namespace LinkedListTesting
 
             //Assert
             Assert.AreEqual(expected, actual);
-        }
+        }        
+        [TestMethod]
+        public void GivenExistingElementToSearch_ShouldReturnIndexOfThatElement_SadCase()
+        {
+            //Arrange
+            int expected = 1;
 
+            //Act
+            linkedList.InsertNodeAtEnd(56);
+            linkedList.InsertNodeAtEnd(30);
+            linkedList.InsertNodeAtEnd(70);
+            int actual = linkedList.Search(70);
+
+            //Assert
+            Assert.AreNotEqual(expected, actual);
+        }
         /// <summary>
         /// Givens the non existing element to search should return negative number.
         /// </summary>
@@ -52,5 +66,7 @@ namespace LinkedListTesting
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+
     }
 }
